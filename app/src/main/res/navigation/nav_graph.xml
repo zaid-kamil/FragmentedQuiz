@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.fragmentedquiz.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.fragmentedquiz.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="Player 1" />
+        <action
+            android:id="@+id/action_SecondFragment_to_q1Fragment"
+            app:destination="@id/q1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/q1Fragment"
+        android:name="com.example.fragmentedquiz.Q1Fragment"
+        android:label="fragment_q1"
+        tools:layout="@layout/fragment_q1" >
+        <action
+            android:id="@+id/action_q1Fragment_to_q2Fragment"
+            app:destination="@id/q2Fragment" />
+        <action
+            android:id="@+id/action_q1Fragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="player 1" />
+    </fragment>
+    <fragment
+        android:id="@+id/q2Fragment"
+        android:name="com.example.fragmentedquiz.Q2Fragment"
+        android:label="fragment_q2"
+        tools:layout="@layout/fragment_q2" >
+        <action
+            android:id="@+id/action_q2Fragment_to_q3Fragment"
+            app:destination="@id/q3Fragment" />
+        <action
+            android:id="@+id/action_q2Fragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="player 1" />
+        <argument
+            android:name="score"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/q3Fragment"
+        android:name="com.example.fragmentedquiz.Q3Fragment"
+        android:label="fragment_q3"
+        tools:layout="@layout/fragment_q3" >
+        <action
+            android:id="@+id/action_q3Fragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment" />
+        <action
+            android:id="@+id/action_q3Fragment_to_winnerFragment"
+            app:destination="@id/winnerFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="player 1" />
+        <argument
+            android:name="score"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.example.fragmentedquiz.GameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="player 1" />
+        <argument
+            android:name="score"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/winnerFragment"
+        android:name="com.example.fragmentedquiz.WinnerFragment"
+        android:label="fragment_winner"
+        tools:layout="@layout/fragment_winner" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="player 1" />
+        <argument
+            android:name="score"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
